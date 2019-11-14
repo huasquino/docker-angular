@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-angular-deployment
+spec:
+  selector:
+    matchLabels:
+      app: docker-angular-pod
+  template:
+    metadata:
+      labels:
+        app: docker-angular-pod
+    spec:
+      containers:
+      - name: docker-angular-container
+        image: contenedorregistrodesarrollo.azurecr.io/dockerangular-prueba:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
