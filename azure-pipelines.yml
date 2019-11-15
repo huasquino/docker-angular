@@ -27,18 +27,3 @@ stages:
         dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
-    - task: replacetokens@3
-      inputs:
-        targetFiles: '**/*.yml'
-        encoding: 'auto'
-        writeBOM: true
-        actionOnMissing: 'warn'
-        keepToken: true
-        tokenPrefix: '#{'
-        tokenSuffix: '}#'
-    - task: KubernetesManifest@0
-      inputs:
-        action: 'deploy'
-        kubernetesServiceConnection: 'KuberConnection'
-        namespace: 'default'
-        manifests: './deployment.yml'
