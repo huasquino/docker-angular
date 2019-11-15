@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: docker-angular-container
-        image: contenedorregistrodesarrollo.azurecr.io/dockerangular-prueba:#{Build.BuildId}#
+        image: contenedorregistrodesarrollo.azurecr.io/dockerangular-prueba:v#{Build.BuildId}#
         resources:
           limits:
             memory: "128Mi"
