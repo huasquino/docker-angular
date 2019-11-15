@@ -27,3 +27,9 @@ stages:
         dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
+    - task: KubernetesManifest@0
+      inputs:
+        action: 'deploy'
+        kubernetesServiceConnection: 'KuberConnection'
+        namespace: 'default'
+        manifests: './deployment.yml'
