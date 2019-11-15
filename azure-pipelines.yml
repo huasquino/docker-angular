@@ -27,6 +27,7 @@ stages:
         azureSubscription: 'Pay-As-You-Go(dfcbd63f-14e6-4a4c-baac-5a2b901bc97a)'
         azureContainerRegistry: '{"loginServer":"contenedorregistrodesarrollo.azurecr.io", "id" : "/subscriptions/dfcbd63f-14e6-4a4c-baac-5a2b901bc97a/resourceGroups/Desarrollo/providers/Microsoft.ContainerRegistry/registries/ContenedorRegistroDesarrollo"}'
         dockerComposeFile: '**/docker-compose.yml'
+        projectName: 'dockerangular-prueba/$(Build.Repository.Name)'
         action: 'Build services'
         additionalImageTags: '$(Build.BuildId)'
         includeLatestTag: true
@@ -36,6 +37,7 @@ stages:
         azureSubscription: 'Pay-As-You-Go(dfcbd63f-14e6-4a4c-baac-5a2b901bc97a)'
         azureContainerRegistry: '{"loginServer":"contenedorregistrodesarrollo.azurecr.io", "id" : "/subscriptions/dfcbd63f-14e6-4a4c-baac-5a2b901bc97a/resourceGroups/Desarrollo/providers/Microsoft.ContainerRegistry/registries/ContenedorRegistroDesarrollo"}'
         dockerComposeFile: '**/docker-compose.yml'
+        projectName: 'dockerangular-prueba/$(Build.Repository.Name)'
         action: 'Push services'
         includeLatestTag: true
         additionalImageTags: '$(Build.BuildId)'
