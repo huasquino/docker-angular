@@ -20,8 +20,6 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
-        imagePullSecrets:
-        - name: mysecretname
 ---
 kind: Service
 apiVersion: v1 
