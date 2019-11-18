@@ -20,3 +20,15 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
+---
+kind: Service
+apiVersion: v1 
+metadata:
+  name: docker-angular-service
+spec:
+  selector:
+    app: docker-angular-pod
+  ports:
+  - port: 80
+    targetPort: 80
+  type: LoadBalancer
